@@ -1,0 +1,10 @@
+#!/usr/bin/expect
+
+# send_tty [lindex $argv 1]
+
+set timeout 30
+spawn ssh [lindex $argv 0]
+expect "password:"
+send [lindex $argv 1]
+send "\r"
+interact
